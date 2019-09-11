@@ -3,7 +3,7 @@ package Model;
 public class Field {
     private int posX;
     private int posY;
-    private boolean isThreatened;
+    private int threatCount;
     private boolean isOccupied;
     private String occupiedBy;
 
@@ -23,12 +23,12 @@ public class Field {
         this.posY = posY;
     }
 
-    public boolean isThreatened() {
-        return isThreatened;
+    public int getThreatCount() {
+        return threatCount;
     }
 
-    public void setThreatened(boolean threatened) {
-        isThreatened = threatened;
+    public void setThreatCount(int threatCount) {
+        this.threatCount = threatCount;
     }
 
     public boolean isOccupied() {
@@ -47,10 +47,10 @@ public class Field {
         this.occupiedBy = occupiedBy;
     }
 
-    public Field(int posX, int posY, boolean isThreatened, boolean isOccupied, String occupiedBy) {
+    public Field(int posX, int posY, int threatCount, boolean isOccupied, String occupiedBy) {
         this.posX = posX;
         this.posY = posY;
-        this.isThreatened = isThreatened;
+        this.threatCount = threatCount;
         this.isOccupied = isOccupied;
         this.occupiedBy = occupiedBy;
     }

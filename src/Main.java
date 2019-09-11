@@ -43,8 +43,8 @@ public class Main {
 
 
             for (int i = 1; i <= board.getSize(); i++) {
-                if (!board.getField(level, i).isThreatened()) {
-                    board.placeQueen(board.getField(level, i));
+                if (board.getField(level, i).getThreatCount() > 0) {
+                    board.placeFigure(board.getField(level, i), "queen");
                     queensPlaced++;
                     board.drawCurrentBoard(board);
                     //System.out.println("placed " + level + " queen");

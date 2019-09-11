@@ -22,7 +22,7 @@ public class Board {
 
         for (int i = 1; i <= size; i++) {
             for (int j = 1; j <= size; j++) {
-                Field field = new Field(i,j,false, false, "");
+                Field field = new Field(i,j,0, false, "");
                 allFields.add(field);
             }
         }
@@ -39,19 +39,19 @@ public class Board {
         return null;
     }
 
-    public int countDestroyed()
+    public int countThreatened()
     {
 
-        int destroyedCount = 0;
+        int threatenedCount = 0;
 
         for (int i = 0; i < allFields.size(); i++) {
 
-            if(allFields.get(i).isThreatened())
-                destroyedCount++;
+            if(allFields.get(i).getThreatCount() > 0)
+                threatenedCount++;
 
         }
 
-        return destroyedCount;
+        return threatenedCount;
     }
 
     public int countOccupied()
@@ -123,7 +123,7 @@ public class Board {
     {
         for (int i = 0; i < allFields.size(); i++) {
             if(allFields.get(i).getPosX() == field.getPosX()) {
-                allFields.get(i).setThreatened(true);
+                allFields.get(i).setThreatCount(allFields.get(i).getThreatCount()+1);
             }
         }
     }
@@ -132,7 +132,7 @@ public class Board {
     {
         for (int i = 0; i < allFields.size(); i++) {
             if(allFields.get(i).getPosY() == field.getPosY()) {
-                allFields.get(i).setThreatened(true);
+                allFields.get(i).setThreatCount(allFields.get(i).getThreatCount()+1);
             }
         }
     }
@@ -146,25 +146,25 @@ public class Board {
             if(field.getPosX() + i <= size && field.getPosY() + i <= size )
             {
                 diagonals.add(getField(field.getPosX() + i , field.getPosY() + i ));
-                getField(field.getPosX() + i , field.getPosY() + i ).setThreatened(true);
+                getField(field.getPosX() + i , field.getPosY() + i ).setThreatCount(allFields.get(i).getThreatCount()+1);
             }
 
             if(field.getPosX() - i > 0 && field.getPosY() - i > 0)
             {
                 diagonals.add(getField(field.getPosX() - i , field.getPosY() - i ));
-                getField(field.getPosX() - i , field.getPosY() - i ).setThreatened(true);
+                getField(field.getPosX() - i , field.getPosY() - i ).setThreatCount(allFields.get(i).getThreatCount()+1);
             }
 
             if(field.getPosY() - i > 0 && field.getPosX() + i <= size)
             {
                 diagonals.add(getField(field.getPosX() + i , field.getPosY() - i ));
-                getField(field.getPosX() + i , field.getPosY() - i ).setThreatened(true);
+                getField(field.getPosX() + i , field.getPosY() - i ).setThreatCount(allFields.get(i).getThreatCount()+1);
             }
 
             if(field.getPosX() - i > 0 && field.getPosY() + i <= size)
             {
                 diagonals.add(getField(field.getPosX() - i , field.getPosY() + i ));
-                getField(field.getPosX() - i , field.getPosY() + i ).setThreatened(true);
+                getField(field.getPosX() - i , field.getPosY() + i ).setThreatCount(allFields.get(i).getThreatCount()+1);
                // System.out.println(diagonals.get(diagonals.size()-1).getPosX() + " " + diagonals.get(diagonals.size()-1).getPosY() + " is added as a diagonal");
             }
         }
@@ -176,8 +176,8 @@ public class Board {
     {
         field.setOccupied(false);
         for (int i = 0; i < allFields.size(); i++) {
-            if(allFields.get(i).getPosX() == field.getPosX()) {
-                allFields.get(i).setThreatened(false);
+            if(allFields.get(i).getPosX() == field.getPosX() && allFields.get(i).getThreatCount() != 0) {
+                allFields.get(i).setThreatCount(allFields.get(i).getThreatCount()-1);
             }
         }
     }
@@ -186,8 +186,8 @@ public class Board {
     {
         field.setOccupied(false);
         for (int i = 0; i < allFields.size(); i++) {
-            if(allFields.get(i).getPosY() == field.getPosY()) {
-                allFields.get(i).setThreatened(false);
+            if(allFields.get(i).getPosY() == field.getPosY() && allFields.get(i).getThreatCount() != 0) {
+                allFields.get(i).setThreatCount(allFields.get(i).getThreatCount()-1);
             }
         }
     }
@@ -196,27 +196,27 @@ public class Board {
     {
         for (int i = 1; i < size; i++) {
 
-            if(field.getPosX() + i <= size && field.getPosY() + i <= size )
+            if(field.getPosX() + i <= size && field.getPosY() + i <= size  && allFields.get(i).getThreatCount() != 0)
             {
-                getField(field.getPosX() + i , field.getPosY() + i ).setThreatened(false);
+                getField(field.getPosX() + i , field.getPosY() + i ).setThreatCount(allFields.get(i).getThreatCount()-1);
                 //System.out.println(diagonals.get(diagonals.size()-1).getPosX() + " " + diagonals.get(diagonals.size()-1).getPosY() + " is added as a diagonal");
             }
 
-            if(field.getPosX() - i > 0 && field.getPosY() - i > 0)
+            if(field.getPosX() - i > 0 && field.getPosY() - i > 0 && allFields.get(i).getThreatCount() != 0)
             {
-                getField(field.getPosX() - i , field.getPosY() - i ).setThreatened(false);
+                getField(field.getPosX() - i , field.getPosY() - i ).setThreatCount(allFields.get(i).getThreatCount()-1);
                 // System.out.println(diagonals.get(diagonals.size()-1).getPosX() + " " + diagonals.get(diagonals.size()-1).getPosY() + " is added as a diagonal");
             }
 
-            if(field.getPosY() - i > 0 && field.getPosX() + i <= size)
+            if(field.getPosY() - i > 0 && field.getPosX() + i <= size && allFields.get(i).getThreatCount() != 0)
             {
-                getField(field.getPosX() + i , field.getPosY() - i ).setThreatened(false);
+                getField(field.getPosX() + i , field.getPosY() - i ).setThreatCount(allFields.get(i).getThreatCount()-1);
                 // System.out.println(diagonals.get(diagonals.size()-1).getPosX() + " " + diagonals.get(diagonals.size()-1).getPosY() + " is added as a diagonal");
             }
 
-            if(field.getPosX() - i > 0 && field.getPosY() + i <= size)
+            if(field.getPosX() - i > 0 && field.getPosY() + i <= size && allFields.get(i).getThreatCount() != 0)
             {
-                getField(field.getPosX() - i , field.getPosY() + i ).setThreatened(false);
+                getField(field.getPosX() - i , field.getPosY() + i ).setThreatCount(allFields.get(i).getThreatCount()-1);
                 // System.out.println(diagonals.get(diagonals.size()-1).getPosX() + " " + diagonals.get(diagonals.size()-1).getPosY() + " is added as a diagonal");
             }
         }
@@ -241,7 +241,7 @@ public class Board {
                         System.out.print("r");
                 }
 
-                else if(getField(j,i).isThreatened())
+                else if(getField(j,i).getThreatCount() > 0)
                     System.out.print("|");
 
                 else
@@ -251,7 +251,7 @@ public class Board {
             }
 
             System.out.print(" ");
-            System.out.println("");
+            System.out.println(" ");
         }
         System.out.println("-");
     }
