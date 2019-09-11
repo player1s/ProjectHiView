@@ -69,35 +69,37 @@ public class Board {
         return occupiedCount;
     }
 
-    public boolean placeQueen(Field field)
+    public boolean placeFigure(Field field, String figureType)
     {
-        if(field.isThreatened()){
-            System.out.println("field is destroyed already, cant put queen to: " + field.getPosX() + " " + field.getPosY());
-            return false;
-        }
-        field.setOccupiedBy("queen");
-        Queen queen = new Queen(field);
-        queenList.add(queen);
 
-        queen.getField().setOccupied(true);
+        switch (figureType)
+        {
+            case("queen"): {
+                field.setOccupiedBy(figureType);
+                Queen queen = new Queen(field);
+                queenList.add(queen);
+                queen.getField().setOccupied(true);
 
-        threatFieldsOn1(field);
-        threatFieldsOn2(field);
-        threatDiagonalsOf12(field);
-        return true;
+                //mark threatened fields
+                threatFieldsOn1(field);
+                threatFieldsOn2(field);
+                threatDiagonalsOf12(field);
+                return true;
+            }
+
+            case("rook"): {
+                field.setOccupiedBy(figureType);
+                Rook rook = new Rook(field);
+                rookList.add(rook);
+                rook.getField().setOccupied(true);
+
+                //mark threatened fields
+                threatFieldsOn1(field);
+                threatFieldsOn2(field);
+                return true;
+            }
     }
-
-    public boolean placeRook(Field field)
-    {
-        field.setOccupiedBy("rook");
-        Rook rook = new Rook(field);
-        rookList.add(rook);
-
-        rook.getField().setOccupied(true);
-
-        threatFieldsOn1(field);
-        threatFieldsOn2(field);
-        return true;
+    return false;
     }
 
     public void removeLastQueen()

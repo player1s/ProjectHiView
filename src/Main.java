@@ -21,11 +21,11 @@ public class Main {
 
         //draw board with specific piece in specific position
         board.drawCurrentBoard(board);
-        board.placeQueen(board.getField(2,3));
+        board.placeFigure(board.getField(2,3), "queen");
         board.drawCurrentBoard(board);
        // board.removeLastQueen();
         board.drawCurrentBoard(board);
-        board.placeRook(board.getField(5,8));
+        board.placeFigure(board.getField(5,8), "rook");
         board.drawCurrentBoard(board);
 
 

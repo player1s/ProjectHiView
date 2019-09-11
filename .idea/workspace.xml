@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="85eaf096-1347-4126-9506-a53eea3e82e0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Model/Rook.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Model/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Field.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Field.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="205">
-              <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+            <state relative-caret-position="154">
+              <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -67,11 +65,14 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1806">
-              <caret line="218" column="45" lean-forward="true" selection-start-line="218" selection-start-column="45" selection-end-line="218" selection-end-column="45" />
+            <state relative-caret-position="1105">
+              <caret line="111" column="35" lean-forward="true" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+              <folding>
+                <element signature="e#7136#7137#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -105,8 +106,8 @@
         <option value="$PROJECT_DIR$/src/Chess/Field.java" />
         <option value="$PROJECT_DIR$/src/Model/Rook.java" />
         <option value="$PROJECT_DIR$/src/Model/Field.java" />
-        <option value="$PROJECT_DIR$/src/Model/Board.java" />
         <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Model/Board.java" />
       </list>
     </option>
   </component>
@@ -201,18 +202,18 @@
       <updated>1566245603421</updated>
       <workItem from="1566245609134" duration="1020000" />
       <workItem from="1566249572538" duration="2342000" />
-      <workItem from="1568214922905" duration="4704000" />
+      <workItem from="1568214922905" duration="6045000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="8066000" />
+    <option name="totallyTimeSpent" value="9407000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25637585" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="UI Designer" order="3" />
@@ -221,7 +222,7 @@
       <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3286119" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -261,17 +262,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Model/Queen.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Rook.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="24" column="38" lean-forward="true" selection-start-line="24" selection-start-column="38" selection-end-line="24" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Model/Queen.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="3" selection-start-column="4" selection-end-line="15" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -305,15 +313,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Model/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1806">
-          <caret line="218" column="45" lean-forward="true" selection-start-line="218" selection-start-column="45" selection-end-line="218" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="30" lean-forward="true" selection-start-line="30" selection-end-line="30" />
+        <state relative-caret-position="1105">
+          <caret line="111" column="35" lean-forward="true" selection-start-line="111" selection-start-column="35" selection-end-line="111" selection-end-column="35" />
+          <folding>
+            <element signature="e#7136#7137#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
