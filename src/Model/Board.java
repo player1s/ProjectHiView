@@ -105,8 +105,8 @@ public class Board {
     public void removeLastQueen()
     {
         if(queenList.size() != 0) {
-            restoreFields(queenList.get(queenList.size() - 1).getField());
-            restoreFieldsDiagonal(queenList.get(queenList.size() - 1).getField());
+            restoreFields1(queenList.get(queenList.size() - 1).getField());
+            restoreFieldsDiagonal12(queenList.get(queenList.size() - 1).getField());
             queenList.remove(queenList.size() - 1);
 
             //redestroy fields that would be destroyed by non removed queens
@@ -172,18 +172,27 @@ public class Board {
         return diagonals;
     }
 
-    public void restoreFields(Field field)
+    public void restoreFields1(Field field)
     {
+        field.setOccupied(false);
         for (int i = 0; i < allFields.size(); i++) {
-            if(allFields.get(i).getPosX() == field.getPosX() || allFields.get(i).getPosY() == field.getPosY()) {
+            if(allFields.get(i).getPosX() == field.getPosX()) {
                 allFields.get(i).setThreatened(false);
-                allFields.get(i).setOccupied(false);
-                //System.out.println("field on " + allFields.get(i).getPosX() + " " + allFields.get(i).getPosY() + " is destroyed");
             }
         }
     }
 
-    public void restoreFieldsDiagonal(Field field)
+    public void restoreFields2(Field field)
+    {
+        field.setOccupied(false);
+        for (int i = 0; i < allFields.size(); i++) {
+            if(allFields.get(i).getPosY() == field.getPosY()) {
+                allFields.get(i).setThreatened(false);
+            }
+        }
+    }
+
+    public void restoreFieldsDiagonal12(Field field)
     {
         for (int i = 1; i < size; i++) {
 
