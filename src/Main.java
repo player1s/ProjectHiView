@@ -11,18 +11,24 @@ public class Main {
 
         long startTime = System.currentTimeMillis();
 
+        //modify unit lenght of the board here
         Board board = new Board(8);
-        put(board);
 
-        /*
+        //start placing queens to solve the queens problem
+        //put(board);
+
+
+
+        //draw board with specific piece in specific position
         board.drawCurrentBoard(board);
         board.placeQueen(board.getField(2,3));
         board.drawCurrentBoard(board);
-        board.removeLastQueen();
+       // board.removeLastQueen();
         board.drawCurrentBoard(board);
-        board.placeQueen(board.getField(3,3));
+        board.placeRook(board.getField(5,8));
         board.drawCurrentBoard(board);
-*/
+
+
         System.out.println("Queens placed: " + queensPlaced);
         //System.out.println("timesRolledBack: " + timesRolledBack);
         System.out.println("Amount of solutions: " + solutions);
@@ -37,7 +43,7 @@ public class Main {
 
 
             for (int i = 1; i <= board.getSize(); i++) {
-                if (!board.getField(level, i).isDestroyed()) {
+                if (!board.getField(level, i).isThreatened()) {
                     board.placeQueen(board.getField(level, i));
                     queensPlaced++;
                     board.drawCurrentBoard(board);

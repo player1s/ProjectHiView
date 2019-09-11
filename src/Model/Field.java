@@ -3,8 +3,9 @@ package Model;
 public class Field {
     private int posX;
     private int posY;
-    private boolean isDestroyed;
+    private boolean isThreatened;
     private boolean isOccupied;
+    private String occupiedBy;
 
     public int getPosX() {
         return posX;
@@ -22,8 +23,12 @@ public class Field {
         this.posY = posY;
     }
 
-    public boolean isDestroyed() {
-        return isDestroyed;
+    public boolean isThreatened() {
+        return isThreatened;
+    }
+
+    public void setThreatened(boolean threatened) {
+        isThreatened = threatened;
     }
 
     public boolean isOccupied() {
@@ -34,14 +39,19 @@ public class Field {
         isOccupied = occupied;
     }
 
-    public void setDestroyed(boolean destroyed) {
-        isDestroyed = destroyed;
+    public String getOccupiedBy() {
+        return occupiedBy;
     }
 
-    public Field(int posX, int posY, boolean isDestroyed, boolean isOccupied) {
+    public void setOccupiedBy(String occupiedBy) {
+        this.occupiedBy = occupiedBy;
+    }
+
+    public Field(int posX, int posY, boolean isThreatened, boolean isOccupied, String occupiedBy) {
         this.posX = posX;
         this.posY = posY;
-        this.isDestroyed = isDestroyed;
+        this.isThreatened = isThreatened;
         this.isOccupied = isOccupied;
+        this.occupiedBy = occupiedBy;
     }
 }
