@@ -1,26 +1,26 @@
 package Model;
 
+import java.util.ArrayList;
+
 public class Field {
-    private int posX;
-    private int posY;
+    private ArrayList<Integer> coords = new ArrayList<>();
     private int threatCount;
     private boolean isOccupied;
     private String occupiedBy;
 
-    public int getPosX() {
-        return posX;
+    public Field(ArrayList<Integer> coords, int threatCount, boolean isOccupied, String occupiedBy) {
+        this.coords = coords;
+        this.threatCount = threatCount;
+        this.isOccupied = isOccupied;
+        this.occupiedBy = occupiedBy;
     }
 
-    public void setPosX(int posX) {
-        this.posX = posX;
+    public ArrayList<Integer> getCoords() {
+        return coords;
     }
 
-    public int getPosY() {
-        return posY;
-    }
-
-    public void setPosY(int posY) {
-        this.posY = posY;
+    public void setCoords(ArrayList<Integer> coords) {
+        this.coords = coords;
     }
 
     public int getThreatCount() {
@@ -44,14 +44,6 @@ public class Field {
     }
 
     public void setOccupiedBy(String occupiedBy) {
-        this.occupiedBy = occupiedBy;
-    }
-
-    public Field(int posX, int posY, int threatCount, boolean isOccupied, String occupiedBy) {
-        this.posX = posX;
-        this.posY = posY;
-        this.threatCount = threatCount;
-        this.isOccupied = isOccupied;
         this.occupiedBy = occupiedBy;
     }
 }
